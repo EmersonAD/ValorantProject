@@ -14,12 +14,23 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_agent_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background"
+            app:layout_constraintBottom_toBottomOf="@id/img_agent"
+            app:layout_constraintDimensionRatio="16:13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_agent"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="16:11"
-            android:background="@drawable/background"
             android:src="@drawable/fullportrait"
+            app:layout_constraintDimensionRatio="16:11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +47,7 @@
             app:layout_constraintTop_toBottomOf="@id/img_agent">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_agent_ability1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -45,6 +57,7 @@
                 android:src="@drawable/ability" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_agent_ability2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -54,6 +67,7 @@
                 android:src="@drawable/ability" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_agent_ability3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
@@ -63,6 +77,7 @@
                 android:src="@drawable/ability" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_agent_ability4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"

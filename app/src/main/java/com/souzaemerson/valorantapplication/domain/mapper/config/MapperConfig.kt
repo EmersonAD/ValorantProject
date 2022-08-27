@@ -1,11 +1,11 @@
 package com.souzaemerson.valorantapplication.domain.mapper.config
 
-import com.souzaemerson.valorantapplication.data.model.AgentData
+import com.souzaemerson.valorantapplication.data.model.Data
 import com.souzaemerson.valorantapplication.domain.mapper.AgentDomain
 
 object MapperConfig {
 
-    fun agentResponseToDomain(response: AgentData): AgentDomain =
+    fun agentResponseToDomain(response: Data): AgentDomain =
         AgentDomain(
             uuid = response.uuid,
             displayName = response.displayName,

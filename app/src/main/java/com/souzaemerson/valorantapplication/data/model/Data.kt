@@ -1,6 +1,6 @@
 package com.souzaemerson.valorantapplication.data.model
 
-data class AgentData(
+data class Data(
     val abilities: List<Ability>,
     val assetPath: String,
     val background: String,
