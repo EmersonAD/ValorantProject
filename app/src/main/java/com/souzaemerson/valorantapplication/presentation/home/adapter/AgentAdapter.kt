@@ -1,11 +1,15 @@
 package com.souzaemerson.valorantapplication.presentation.home.adapter
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.souzaemerson.valorantapplication.R
 import com.souzaemerson.valorantapplication.data.model.Data
 import com.souzaemerson.valorantapplication.databinding.AgentBannerBinding
+import com.souzaemerson.valorantapplication.domain.mapper.AgentDomain
+import org.xmlpull.v1.XmlPullParser
 
 class AgentAdapter(private val agents: List<Data>) :
     RecyclerView.Adapter<AgentAdapter.MyViewHolder>() {
@@ -28,12 +32,11 @@ class AgentAdapter(private val agents: List<Data>) :
 
         fun bindView(agent: Data) {
             binding.run {
-                imgAgentBackground.load(agent.background)
-                imgAgent.load(agent.fullPortrait)
-                imgAgentAbility1.load(agent.abilities[0].displayIcon)
-                imgAgentAbility2.load(agent.abilities[1].displayIcon)
-                imgAgentAbility3.load(agent.abilities[2].displayIcon)
-                imgAgentAbility4.load(agent.abilities[3].displayIcon)
+                if (agent.isPlayableCharacter) {
+                    txtAgentTitle.text = agent.displayName
+                    imgAgentBackground.load(agent.background)
+                    imgAgent.load(agent.fullPortrait)
+                }
             }
         }
 

@@ -5,17 +5,21 @@ import com.souzaemerson.valorantapplication.domain.mapper.AgentDomain
 
 object MapperConfig {
 
-    fun agentResponseToDomain(response: Data): AgentDomain =
-        AgentDomain(
-            uuid = response.uuid,
-            displayName = response.displayName,
-            displayIcon = response.displayIcon,
-            description = response.description,
-            role = response.role,
-            fullPortrait = response.fullPortrait,
-            background = response.background,
-            voiceLine = response.voiceLine,
-            isPlayableCharacter = response.isPlayableCharacter,
-            ability = response.abilities
-        )
+    fun mapDataToDataDomain(dataResponse: List<Data>): List<AgentDomain> {
+
+        return dataResponse.map { dataResponse ->
+            AgentDomain(
+                uuid = dataResponse.uuid,
+                displayName = dataResponse.displayName,
+                displayIcon = dataResponse.displayIcon,
+                description = dataResponse.description,
+                role = dataResponse.role,
+                fullPortrait = dataResponse.fullPortrait,
+                background = dataResponse.background,
+                voiceLine = dataResponse.voiceLine,
+                isPlayableCharacter = dataResponse.isPlayableCharacter,
+                ability = dataResponse.abilities
+            )
+        }
+    }
 }

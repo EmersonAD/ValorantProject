@@ -1,11 +1,11 @@
 package com.souzaemerson.valorantapplication.presentation.activity
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.souzaemerson.valorantapplication.R
+import androidx.appcompat.app.AppCompatActivity
 import com.souzaemerson.valorantapplication.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

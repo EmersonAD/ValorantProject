@@ -1,15 +1,24 @@
-package com.souzaemerson.valorantapplication.data.network
+package com.souzaemerson.valorantapplication.di.module
 
 import com.google.gson.GsonBuilder
+import com.souzaemerson.valorantapplication.data.remote.Service
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
-object ApiService {
+@Module
+@InstallIn(SingletonComponent::class)
+object RetrofitModule {
 
-    private fun initRetrofit(): Retrofit {
-
+    @Provides
+    @Singleton
+    fun initRetrofit(): Service {
         val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
         val gson = GsonBuilder().setLenient().create()
@@ -19,8 +28,6 @@ object ApiService {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
+            .create(Service::class.java)
     }
-
-    val service: Service
-        get() = initRetrofit().create(Service::class.java)
 }
