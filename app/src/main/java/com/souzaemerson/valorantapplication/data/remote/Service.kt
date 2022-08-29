@@ -1,6 +1,6 @@
 package com.souzaemerson.valorantapplication.data.remote
 
-import com.souzaemerson.valorantapplication.data.model.AgentResponse
+import com.souzaemerson.valorantapplication.data.model.valorant.AgentResponse
 import retrofit2.http.GET
 
 interface Service {

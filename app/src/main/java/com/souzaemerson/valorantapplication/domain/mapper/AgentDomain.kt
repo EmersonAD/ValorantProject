@@ -1,8 +1,8 @@
 package com.souzaemerson.valorantapplication.domain.mapper
 
-import com.souzaemerson.valorantapplication.data.model.Ability
-import com.souzaemerson.valorantapplication.data.model.Role
-import com.souzaemerson.valorantapplication.data.model.VoiceLine
+import com.souzaemerson.valorantapplication.data.model.valorant.Ability
+import com.souzaemerson.valorantapplication.data.model.valorant.Role
+import com.souzaemerson.valorantapplication.data.model.valorant.VoiceLine
 
 data class AgentDomain(
     val uuid: String,

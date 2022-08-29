@@ -1,6 +1,6 @@
 package com.souzaemerson.valorantapplication.domain.mapper.config
 
-import com.souzaemerson.valorantapplication.data.model.Data
+import com.souzaemerson.valorantapplication.data.model.valorant.Data
 import com.souzaemerson.valorantapplication.domain.mapper.AgentDomain
 
 object MapperConfig {

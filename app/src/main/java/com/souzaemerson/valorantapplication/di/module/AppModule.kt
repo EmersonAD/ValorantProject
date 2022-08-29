@@ -1,14 +1,15 @@
 package com.souzaemerson.valorantapplication.di.module
 
-import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepository
+import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
 import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepositoryImpl
+import com.souzaemerson.valorantapplication.domain.repository.login.LoginRepository
+import com.souzaemerson.valorantapplication.data.repository.login.LoginRepositoryImpl
+import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepository
+import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepositoryImpl
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Singleton
 
 @Module
@@ -20,4 +21,16 @@ abstract class AppModule {
     abstract fun bindAgentRepository(
         agentRepository: AgentRepositoryImpl
     ): AgentRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindLoginRepository(
+        loginRepository: LoginRepositoryImpl
+    ): LoginRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindLoginUseCaseRepository(
+        loginUseCaseRepository: LoginUseCaseRepositoryImpl
+    ): LoginUseCaseRepository
 }

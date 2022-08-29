@@ -5,9 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.souzaemerson.valorantapplication.core.State
-import com.souzaemerson.valorantapplication.data.model.AgentResponse
-import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepository
-import com.souzaemerson.valorantapplication.domain.mapper.config.MapperConfig
+import com.souzaemerson.valorantapplication.data.model.valorant.AgentResponse
+import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch

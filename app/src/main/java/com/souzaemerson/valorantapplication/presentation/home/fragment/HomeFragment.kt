@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.souzaemerson.valorantapplication.core.Status
-import com.souzaemerson.valorantapplication.data.model.Data
-import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepository
+import com.souzaemerson.valorantapplication.data.model.valorant.Data
+import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
 import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepositoryImpl
 import com.souzaemerson.valorantapplication.databinding.FragmentHomeBinding
 import com.souzaemerson.valorantapplication.di.module.RetrofitModule

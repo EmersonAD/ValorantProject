@@ -1,4 +1,4 @@
-package com.souzaemerson.valorantapplication.data.model
+package com.souzaemerson.valorantapplication.data.model.valorant
 
 data class Ability(
     val description: String,

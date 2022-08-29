@@ -1,15 +1,11 @@
 package com.souzaemerson.valorantapplication.presentation.home.adapter
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.souzaemerson.valorantapplication.R
-import com.souzaemerson.valorantapplication.data.model.Data
+import com.souzaemerson.valorantapplication.data.model.valorant.Data
 import com.souzaemerson.valorantapplication.databinding.AgentBannerBinding
-import com.souzaemerson.valorantapplication.domain.mapper.AgentDomain
-import org.xmlpull.v1.XmlPullParser
 
 class AgentAdapter(private val agents: List<Data>) :
     RecyclerView.Adapter<AgentAdapter.MyViewHolder>() {
