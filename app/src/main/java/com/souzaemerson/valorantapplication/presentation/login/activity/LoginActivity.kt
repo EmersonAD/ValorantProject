@@ -1,6 +1,7 @@
 package com.souzaemerson.valorantapplication.presentation.login.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.souzaemerson.valorantapplication.core.Status
 import com.souzaemerson.valorantapplication.data.auth.Authentication
@@ -11,22 +12,19 @@ import com.souzaemerson.valorantapplication.di.module.FirebaseModule
 import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepository
 import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepositoryImpl
 import com.souzaemerson.valorantapplication.presentation.login.viewmodel.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers.IO
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var useCaseRepository: LoginUseCaseRepository
-    private lateinit var repository: LoginRepository
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel by viewModels<LoginViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        repository = LoginRepositoryImpl(Authentication(FirebaseModule.initAuth()))
-        useCaseRepository = LoginUseCaseRepositoryImpl(repository)
-        viewModel = LoginViewModel(useCaseRepository, IO)
 
         observeVMEvents()
         signIn()

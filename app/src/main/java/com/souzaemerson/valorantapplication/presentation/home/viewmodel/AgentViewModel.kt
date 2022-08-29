@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.souzaemerson.valorantapplication.core.State
 import com.souzaemerson.valorantapplication.data.model.valorant.AgentResponse
+import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Io
 import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -16,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AgentViewModel @Inject constructor(
     private val repository: AgentRepository,
-    private val ioDispatcher: CoroutineDispatcher
+    @Io private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _agentResponse = MutableLiveData<State<AgentResponse>>()

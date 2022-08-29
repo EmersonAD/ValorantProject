@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.souzaemerson.valorantapplication.core.Status
 import com.souzaemerson.valorantapplication.data.model.valorant.Data
-import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
 import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepositoryImpl
 import com.souzaemerson.valorantapplication.databinding.FragmentHomeBinding
 import com.souzaemerson.valorantapplication.di.module.RetrofitModule
@@ -20,8 +20,7 @@ import kotlinx.coroutines.Dispatchers
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mAdapter: AgentAdapter
-    private lateinit var viewModel: AgentViewModel
-    private lateinit var repository: AgentRepository
+    private val viewModel by viewModels<AgentViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +33,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        repository = AgentRepositoryImpl(RetrofitModule.initRetrofit())
-        viewModel = AgentViewModel(repository, Dispatchers.IO)
 
         observeVMEvents()
         getAgents()
