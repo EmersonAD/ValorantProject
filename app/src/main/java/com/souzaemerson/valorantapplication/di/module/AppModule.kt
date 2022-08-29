@@ -4,8 +4,8 @@ import com.souzaemerson.valorantapplication.domain.repository.agent.AgentReposit
 import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepositoryImpl
 import com.souzaemerson.valorantapplication.domain.repository.login.LoginRepository
 import com.souzaemerson.valorantapplication.data.repository.login.LoginRepositoryImpl
-import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepository
-import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepositoryImpl
+import com.souzaemerson.valorantapplication.domain.usecase.login.UserSignInUseCase
+import com.souzaemerson.valorantapplication.domain.usecase.login.UserSignInUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -31,6 +31,6 @@ abstract class AppModule {
     @Singleton
     @Binds
     abstract fun bindLoginUseCaseRepository(
-        loginUseCaseRepository: LoginUseCaseRepositoryImpl
-    ): LoginUseCaseRepository
+        loginUseCaseRepository: UserSignInUseCaseImpl
+    ): UserSignInUseCase
 }

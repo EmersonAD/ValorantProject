@@ -4,17 +4,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.souzaemerson.valorantapplication.core.Status
-import com.souzaemerson.valorantapplication.data.auth.Authentication
-import com.souzaemerson.valorantapplication.domain.repository.login.LoginRepository
-import com.souzaemerson.valorantapplication.data.repository.login.LoginRepositoryImpl
 import com.souzaemerson.valorantapplication.databinding.ActivityLoginBinding
-import com.souzaemerson.valorantapplication.di.module.FirebaseModule
-import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepository
-import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepositoryImpl
 import com.souzaemerson.valorantapplication.presentation.login.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers.IO
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {

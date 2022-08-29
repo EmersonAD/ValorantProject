@@ -5,15 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.souzaemerson.valorantapplication.core.State
-import com.souzaemerson.valorantapplication.domain.usecase.login.LoginUseCaseRepository
+import com.souzaemerson.valorantapplication.domain.usecase.login.UserSignInUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val useCaseRepository: LoginUseCaseRepository
+    private val useCaseRepository: UserSignInUseCase
 ) : ViewModel() {
 
     private val _signIn = MutableLiveData<State<Boolean>>()
