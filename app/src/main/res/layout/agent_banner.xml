@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="2dp"
-    android:backgroundTint="@color/darker_gray"
     app:cardCornerRadius="8dp"
-    app:strokeColor="@color/white"
-    app:strokeWidth="4dp">
+    android:backgroundTint="@color/black"
+    app:strokeColor="@color/red"
+    app:strokeWidth="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cv_container"
