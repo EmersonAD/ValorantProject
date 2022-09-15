@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.souzaemerson.valorantapplication.core.State
-import com.souzaemerson.valorantapplication.data.model.valorant.AgentResponse
+import com.souzaemerson.valorantapplication.data.model.valorant.Data
 import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Io
-import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
+import com.souzaemerson.valorantapplication.domain.usecase.GetAgentUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
@@ -16,19 +16,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AgentViewModel @Inject constructor(
-    private val repository: AgentRepository,
+    private val useCase: GetAgentUseCase,
     @Io private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
-    private val _agentResponse = MutableLiveData<State<AgentResponse>>()
-    val agentResponse: LiveData<State<AgentResponse>> get() = _agentResponse
+    private val _agentResponse = MutableLiveData<State<List<Data>>>()
+    val agentResponse: LiveData<State<List<Data>>> get() = _agentResponse
 
     fun getAgents() {
         viewModelScope.launch {
             try {
                 _agentResponse.value = State.loading(true)
                 withContext(ioDispatcher) {
-                    repository.getAgents()
+                    useCase.getAgents()
                 }.let { response ->
                     _agentResponse.value = State.loading(false)
                     _agentResponse.value = State.success(response)

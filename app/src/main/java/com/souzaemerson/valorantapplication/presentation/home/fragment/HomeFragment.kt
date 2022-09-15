@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
             when (it.status) {
                 Status.SUCCESS -> {
                     it.data?.let { agentResponse ->
-                        setRecycler(agentResponse.data)
+                        setRecycler(agentResponse)
                     }
                 }
                 Status.LOADING -> {}

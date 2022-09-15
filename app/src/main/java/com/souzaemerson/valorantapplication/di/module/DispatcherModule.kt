@@ -1,7 +1,9 @@
 package com.souzaemerson.valorantapplication.di.module
 
+import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Default
 import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Io
 import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Main
+import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Unconfined
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,4 +25,14 @@ object DispatcherModule {
     @Provides
     @Main
     fun providesMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
+
+    @Singleton
+    @Provides
+    @Default
+    fun providesDefaultDispatcher(): CoroutineDispatcher = Dispatchers.Default
+
+    @Singleton
+    @Provides
+    @Unconfined
+    fun providesUnconfinedDispatcher(): CoroutineDispatcher = Dispatchers.Unconfined
 }
