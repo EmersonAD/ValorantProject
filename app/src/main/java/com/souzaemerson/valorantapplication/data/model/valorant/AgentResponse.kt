@@ -1,6 +1,6 @@
 package com.souzaemerson.valorantapplication.data.model.valorant
 
 data class AgentResponse(
-    val data: List<Data>,
+    val data: List<AgentData>,
     val status: Int
 )

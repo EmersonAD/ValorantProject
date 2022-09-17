@@ -7,17 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.souzaemerson.valorantapplication.core.Status
-import com.souzaemerson.valorantapplication.data.model.valorant.Data
-import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepositoryImpl
+import com.souzaemerson.valorantapplication.data.model.valorant.AgentData
 import com.souzaemerson.valorantapplication.databinding.FragmentHomeBinding
-import com.souzaemerson.valorantapplication.di.module.RetrofitModule
 import com.souzaemerson.valorantapplication.presentation.home.adapter.AgentAdapter
 import com.souzaemerson.valorantapplication.presentation.home.viewmodel.AgentViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class AgentFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mAdapter: AgentAdapter
     private val viewModel by viewModels<AgentViewModel>()
@@ -43,11 +40,23 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeVMEvents() {
-        viewModel.agentResponse.observe(viewLifecycleOwner) {
+        viewModel.agentRemote.observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
-                    it.data?.let { agentResponse ->
-                        setRecycler(agentResponse)
+                    it.data?.let { agentsRemote ->
+                        setRecycler(agentsRemote)
+                    }
+                }
+                Status.LOADING -> {}
+                Status.ERROR -> {}
+            }
+        }
+
+        viewModel.agentCache.observe(viewLifecycleOwner) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    it.data?.let { agentsInCache ->
+                        setRecycler(agentsInCache)
                     }
                 }
                 Status.LOADING -> {}
@@ -56,11 +65,11 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setAdapter(agentsList: List<Data>) {
+    private fun setAdapter(agentsList: List<AgentData>) {
         mAdapter = AgentAdapter(agentsList)
     }
 
-    private fun setRecycler(agentsList: List<Data>) {
+    private fun setRecycler(agentsList: List<AgentData>) {
         setAdapter(agentsList)
         binding.homeRecycler.apply {
             adapter = mAdapter

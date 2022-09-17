@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.souzaemerson.valorantapplication.data.model.valorant.Data
+import com.souzaemerson.valorantapplication.data.model.valorant.AgentData
 import com.souzaemerson.valorantapplication.databinding.AgentBannerBinding
 
-class AgentAdapter(private val agents: List<Data>) :
+class AgentAdapter(private val agents: List<AgentData>) :
     RecyclerView.Adapter<AgentAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -26,7 +26,7 @@ class AgentAdapter(private val agents: List<Data>) :
     inner class MyViewHolder(private val binding: AgentBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bindView(agent: Data) {
+        fun bindView(agent: AgentData) {
             binding.run {
                 if (agent.isPlayableCharacter) {
                     txtAgentTitle.text = agent.displayName

@@ -1,7 +1,7 @@
 package com.souzaemerson.valorantapplication.domain.usecase
 
-import com.souzaemerson.valorantapplication.data.model.valorant.Data
+import com.souzaemerson.valorantapplication.data.model.valorant.AgentData
 
 interface GetAgentUseCase {
-    suspend fun getAgents(): List<Data>
+    suspend operator fun invoke(): List<AgentData>
 }

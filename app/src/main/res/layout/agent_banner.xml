@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="2dp"
-    app:cardCornerRadius="8dp"
+    android:layout_margin="12dp"
     app:strokeColor="@color/white"
-    app:strokeWidth="2dp">
+    app:strokeWidth="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cv_container"
-        android:background="@drawable/banner_bg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/banner_bg">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_agent_background"
