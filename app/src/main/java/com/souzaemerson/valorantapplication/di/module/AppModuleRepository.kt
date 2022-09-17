@@ -1,30 +1,28 @@
 package com.souzaemerson.valorantapplication.di.module
 
 import com.souzaemerson.valorantapplication.data.repository.agent.AgentRepositoryImpl
+import com.souzaemerson.valorantapplication.data.repository.cache.CacheAgentRepositoryImpl
 import com.souzaemerson.valorantapplication.domain.repository.agent.AgentRepository
-import com.souzaemerson.valorantapplication.domain.usecase.GetAgentUseCase
-import com.souzaemerson.valorantapplication.domain.usecase.GetAgentUseCaseImpl
+import com.souzaemerson.valorantapplication.domain.repository.cache.CacheAgentRepository
 import dagger.Binds
-import dagger.Component
 import dagger.Module
-import dagger.Subcomponent
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class AppModule {
+abstract class AppModuleRepository {
 
     @Singleton
     @Binds
     abstract fun bindAgentRepository(
-        agentRepository: AgentRepositoryImpl
+        agentRepository: AgentRepositoryImpl,
     ): AgentRepository
 
     @Singleton
     @Binds
-    abstract fun bindAgentUseCase(
-        getAgentUseCase: GetAgentUseCaseImpl
-    ): GetAgentUseCase
+    abstract fun bindCacheAgentRepository(
+        cacheAgentRepository: CacheAgentRepositoryImpl,
+    ): CacheAgentRepository
 }

@@ -6,4 +6,7 @@ import retrofit2.http.GET
 interface ValorantService {
     @GET("/v1/agents")
     suspend fun getAgents(): AgentResponse
+
+    @GET("/v1/weapons")
+    suspend fun getWeapons(): AgentResponse
 }
