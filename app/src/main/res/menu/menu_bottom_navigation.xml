@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/agentFragment"
+        android:icon="@drawable/icons8_valorant"
+        android:title="@string/agents"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/weaponFragment"
+        android:icon="@drawable/ic_weapon"
+        android:title="@string/weapons"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/agentFragment">
+
+    <fragment
+        android:id="@+id/agentFragment"
+        android:name="com.souzaemerson.valorantapplication.presentation.home.fragment.AgentFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/weaponFragment"
+        android:name="com.souzaemerson.valorantapplication.presentation.weapons.fragment.WeaponFragment"
+        android:label="fragment_weapon"
+        tools:layout="@layout/fragment_weapon" />
+</navigation>

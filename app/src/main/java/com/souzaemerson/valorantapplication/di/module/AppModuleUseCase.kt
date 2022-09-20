@@ -1,11 +1,13 @@
 package com.souzaemerson.valorantapplication.di.module
 
-import com.souzaemerson.valorantapplication.domain.usecase.GetAgentUseCase
-import com.souzaemerson.valorantapplication.domain.usecase.GetAgentUseCaseImpl
+import com.souzaemerson.valorantapplication.domain.usecase.agent.GetAgentUseCase
+import com.souzaemerson.valorantapplication.domain.usecase.agent.GetAgentUseCaseImpl
 import com.souzaemerson.valorantapplication.domain.usecase.agent.cache.firstaccess.FirstAccessCacheUseCase
 import com.souzaemerson.valorantapplication.domain.usecase.agent.cache.firstaccess.FirstAccessCacheUseCaseImpl
 import com.souzaemerson.valorantapplication.domain.usecase.agent.cache.fromcache.GetAgentFromCacheUseCase
 import com.souzaemerson.valorantapplication.domain.usecase.agent.cache.fromcache.GetAgentFromCacheUseCaseImpl
+import com.souzaemerson.valorantapplication.domain.usecase.weapon.GetWeaponsUseCase
+import com.souzaemerson.valorantapplication.domain.usecase.weapon.GetWeaponsUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -33,4 +35,10 @@ abstract class AppModuleUseCase {
     abstract fun bindGetAgentFromCacheUseCase(
         getAgentFromCacheUseCase: GetAgentFromCacheUseCaseImpl,
     ): GetAgentFromCacheUseCase
+
+    @Singleton
+    @Binds
+    abstract fun bindGetWeaponsUseCase(
+        getWeaponsUseCase: GetWeaponsUseCaseImpl,
+    ): GetWeaponsUseCase
 }

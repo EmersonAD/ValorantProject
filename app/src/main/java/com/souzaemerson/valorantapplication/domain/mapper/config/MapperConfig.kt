@@ -31,10 +31,11 @@ object MapperConfig {
             WeaponDomain(
                 category = weapon.category,
                 skinDefaultUuid = weapon.defaultSkinUuid,
+                skinDefaultIcon = weapon.displayIcon,
                 weaponName = weapon.displayName,
                 skins = weapon.skins,
-                uuid = weapon.uuid,
-                weaponStats = weapon.weaponStats
+                weaponStats = weapon.weaponStats,
+                uuid = weapon.uuid
             )
         }
     }

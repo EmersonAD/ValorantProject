@@ -1,11 +1,22 @@
 package com.souzaemerson.valorantapplication.data.model.weapon
 
+
+import com.google.gson.annotations.SerializedName
+
+
 data class Chroma(
+    @SerializedName("assetPath")
     val assetPath: String,
-    val displayIcon: String,
+    @SerializedName("displayIcon")
+    val displayIcon: String?,
+    @SerializedName("displayName")
     val displayName: String,
+    @SerializedName("fullRender")
     val fullRender: String,
-    val streamedVideo: String,
-    val swatch: String,
-    val uuid: String
+    @SerializedName("streamedVideo")
+    val streamedVideo: String?,
+    @SerializedName("swatch")
+    val swatch: String?,
+    @SerializedName("uuid")
+    val uuid: String,
 )

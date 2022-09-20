@@ -1,10 +1,20 @@
 package com.souzaemerson.valorantapplication.data.model.weapon
 
+
+import com.google.gson.annotations.SerializedName
+
+
 data class Level(
+    @SerializedName("assetPath")
     val assetPath: String,
-    val displayIcon: String,
-    val displayName: String,
-    val levelItem: String,
-    val streamedVideo: String,
-    val uuid: String
+    @SerializedName("displayIcon")
+    val displayIcon: String?,
+    @SerializedName("displayName")
+    val displayName: String?,
+    @SerializedName("levelItem")
+    val levelItem: String?,
+    @SerializedName("streamedVideo")
+    val streamedVideo: String?,
+    @SerializedName("uuid")
+    val uuid: String,
 )

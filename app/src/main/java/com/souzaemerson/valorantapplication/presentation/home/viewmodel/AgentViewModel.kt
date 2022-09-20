@@ -8,7 +8,7 @@ import com.souzaemerson.valorantapplication.core.State
 import com.souzaemerson.valorantapplication.data.model.valorant.AgentData
 import com.souzaemerson.valorantapplication.di.qualifier.dispatcher.Io
 import com.souzaemerson.valorantapplication.domain.repository.cache.CacheAgentRepository
-import com.souzaemerson.valorantapplication.domain.usecase.GetAgentUseCase
+import com.souzaemerson.valorantapplication.domain.usecase.agent.GetAgentUseCase
 import com.souzaemerson.valorantapplication.domain.usecase.agent.cache.firstaccess.FirstAccessCacheUseCase
 import com.souzaemerson.valorantapplication.domain.usecase.agent.cache.fromcache.GetAgentFromCacheUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

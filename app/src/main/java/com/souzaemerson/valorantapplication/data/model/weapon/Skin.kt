@@ -1,13 +1,26 @@
 package com.souzaemerson.valorantapplication.data.model.weapon
 
+
+import com.google.gson.annotations.SerializedName
+
+
 data class Skin(
+    @SerializedName("assetPath")
     val assetPath: String,
+    @SerializedName("chromas")
     val chromas: List<Chroma>,
-    val contentTierUuid: String,
-    val displayIcon: String,
+    @SerializedName("contentTierUuid")
+    val contentTierUuid: String?,
+    @SerializedName("displayIcon")
+    val displayIcon: String?,
+    @SerializedName("displayName")
     val displayName: String,
+    @SerializedName("levels")
     val levels: List<Level>,
+    @SerializedName("themeUuid")
     val themeUuid: String,
+    @SerializedName("uuid")
     val uuid: String,
-    val wallpaper: String
+    @SerializedName("wallpaper")
+    val wallpaper: String?,
 )
